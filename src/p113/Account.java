@@ -1,7 +1,12 @@
 package p113;
 
-public class Account {
+public class Account implements Comparable<Account> {
 	String accountNo;
+
+	public Account(String no)
+	{
+		this.accountNo = no;
+	}
 
 	public boolean equals(Object o)
 	{
@@ -16,5 +21,12 @@ public class Account {
 			return true;
 		return false;
 	}
+
+	public int compareTo(Account obj)
+	{
+		return this.accountNo.compareTo(obj.accountNo);
+	}
+
+
 
 }
