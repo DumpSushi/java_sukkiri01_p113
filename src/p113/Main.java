@@ -56,6 +56,22 @@ public class Main {
 				System.out.println(a.accountNo);
 			}
 		}
+
+		// 4-6 インスタンスの複製。
+		{
+			System.out.println("<4-6>");
+			Hero h1 = new Hero("ミナト");
+			Sword s = new Sword("はがねのけん");
+			h1.setSword(s);
+			System.out.println("装備:" + h1.getSword().getName());
+			System.out.println("clone()で複製します");
+			Hero h2 = h1.clone();
+			System.out.println("コピー元の勇者の剣の名前を変えます");
+			h1.getSword().setName("ひのきのぼう");
+			System.out.println("コピー元とコピー先の勇者の装備を表示します");
+			System.out.println("コピー元:" + h1.getSword().getName() +
+					" / コピー先:" + h2.getSword().getName());
+		}
 	}
 
 }

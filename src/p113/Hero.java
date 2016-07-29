@@ -1,10 +1,15 @@
 package p113;
 
-public class Hero {
+public class Hero implements Cloneable{
 	private String name;
 	private int hp;
 	private int mp;
+	private Sword sword;
 
+	public Hero()
+	{
+		this.name = "noname";
+	}
 	public Hero(String name)
 	{
 		this.name = name;
@@ -34,6 +39,15 @@ public class Hero {
 		result = result * 31 + hp;
 		return result;
 	}
+	public Hero clone()
+	{
+		Hero result = new Hero();
+		result.setName(this.getName());
+		result.setHp(this.getHp());
+		result.setMp(this.getMp());
+		result.setSword(this.sword);
+		return result;
+	}
 
 	public String getName() {
 		return name;
@@ -52,6 +66,12 @@ public class Hero {
 	}
 	void setMp(int mp) {
 		this.mp = mp;
+	}
+	public Sword getSword() {
+		return sword;
+	}
+	public void setSword(Sword sword) {
+		this.sword = sword;
 	}
 
 }
