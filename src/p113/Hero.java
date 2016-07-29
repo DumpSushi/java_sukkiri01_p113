@@ -14,6 +14,26 @@ public class Hero {
 		return "勇者(名前=" + this.name +
 				"/HP=" + this.hp + "/MP=" + this.mp + ")";
 	}
+	public boolean equals(Object o)
+	{
+		if(o == this)
+			return true;
+		if(o == null)
+			return false;
+		if(!(o instanceof Hero))
+			return false;
+		Hero r = (Hero)o;
+		if(r.name.equals(this.getName()))
+			return true;
+		return false;
+	}
+	public int hashCode()
+	{
+		int result = 37;
+		result = result * 31 + name.hashCode();
+		result = result * 31 + hp;
+		return result;
+	}
 
 	public String getName() {
 		return name;
